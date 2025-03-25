@@ -30,7 +30,22 @@ nav{
 }
 
 .logo{
-    width: 140px;
+    .logo {
+        width: 100px; /* Reduced from 140px */
+        margin-left: 10px; /* Add left margin */
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .logo {
+            width: 80px; /* Even smaller on mobile */
+            margin-left: 5px; /* Less margin on mobile */
+        }
+        
+        #menu-icon {
+            right: 10px; /* Adjust hamburger position */
+            top: 15px;
+        }
+    }
 }
 
 nav ul li{
@@ -346,4 +361,87 @@ form btn2{
         display: block;
         font-size: 25px;
     }
+}
+/* Add these styles */
+nav ul {
+    transition: all 0.5s ease;
+}
+
+#menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+    #menu-icon {
+        display: block;
+        z-index: 100;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        background: #2a2a2a;
+        padding-top: 50px;
+        flex-direction: column;
+        transition: all 0.5s ease;
+    }
+
+    nav ul.show-menu {
+        right: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+        text-align: center;
+    }
+
+    .header-text {
+        margin-top: 50%;
+        font-size: 20px;
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    .sub-title {
+        font-size: 40px;
+    }
+
+    .about-col-1, .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .about-col-2 p {
+        font-size: 16px;
+    }
+
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+
+    .services-list, .work-list {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-links {
+        font-size: 18px;
+        margin-right: 20px;
+    }
+
+    .layer {
+        padding: 0 20px;
+        font-size: 12px;
+    }
+}
+
+/* Fix typo in transition property */
+.layer {
+    transition: height 0.5s;
 }
