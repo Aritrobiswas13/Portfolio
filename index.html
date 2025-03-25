@@ -11,7 +11,8 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="images/logo.png" alt="logo">
+                <i class="fas fa-bars" id="menu-icon"></i>
+                <img src="images/logo.png" class="logo"alt="logo">
                 <ul>
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -37,8 +38,8 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About me</h1>
-                    <p>I am Aitro Biswas 1st year btech Computer Science Student at MMDU , Ambala, I'm a passionate CSE student my expertise includes :-HTML,CSS,JS . I can manage the front end .
-                        and i also participated in SIH my team got slected but we couldn't make till final and also i participated in opencode'24 a month long open source event 
+                    <p>I am Aritro Biswas 1st year B.tech Computer Science Student at M M D U , Ambala, I'm a passionate CSE student my expertise includes :- HTML,CSS,JS . I can manage the front end .
+                        and i also participated in SIH my team got selected but we couldn't make till final and also i participated in Open code'24 a month long open source event which is organized by IIT Allahabad.
                         </p>
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -113,7 +114,7 @@
         <div class="row">
             <div class="contact-left">
                 <h1 class="sub-title">Contact me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i>Contact:- Aritrobiswas614@gmail.com</p>
+                <p><i class="fa-solid fa-paper-plane"></i>Contact :- Aritrobiswas614@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i>+91 7814261066</p>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/share/1GzdyXeDYW/"><i class="fa-brands fa-facebook"></i></a>
@@ -150,6 +151,24 @@
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
+    
+        // Mobile menu functionality
+        const menuIcon = document.getElementById('menu-icon');
+        const navUl = document.querySelector('nav ul');
+    
+        menuIcon.addEventListener('click', () => {
+            navUl.classList.toggle('show-menu');
+            menuIcon.classList.toggle('fa-times');
+        });
+    
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (!menuIcon.contains(e.target) && !navUl.contains(e.target)) {
+                navUl.classList.remove('show-menu');
+                menuIcon.classList.remove('fa-times');
+            }
+        });
+    
 </script>
 </body>
 </html>
